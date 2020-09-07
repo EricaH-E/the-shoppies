@@ -19,7 +19,9 @@ const Nominee = (props) => {
 Nominee.propTypes = {
     Title: propTypes.string.isRequired,
     Year: propTypes.string.isRequired,
-    Poster: propTypes.string
+    Poster: propTypes.string,
+    remove: propTypes.func.isRequired,
+    imdbID: propTypes.string.isRequired
 }
 
 export default Nominee; 

@@ -1,8 +1,10 @@
 import React from 'react';
+import propTypes from 'prop-types';
 import axios from 'axios';
 import dotenv from 'dotenv';
+import { debounce } from 'lodash';
 import MovieResults from './movie';
-import Nominations from './nominations'
+import Nominations from '../nominations/nominations';
 
 import { BsSearch } from 'react-icons/bs';
 import { connect } from 'react-redux';
@@ -29,8 +31,12 @@ class Search extends React.Component {
     handleQueryChange = async (e) => {
         e.preventDefault();
         this.setState({ query: e.target.value });
+        this.SearchMovies = debounce(this.SearchMovies, 300);
+        this.SearchMovies();
+    }
 
-        const url = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${this.state.query}&type=movie`
+    SearchMovies = async (e) => {
+        const url = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${this.state.query}&type=movie`;
         try {
             const data = await axios.get(url);
             const results = filterSearchResults(data.data.Search, this.props.nominations);
@@ -39,8 +45,6 @@ class Search extends React.Component {
         } catch (error) {
             console.log(error);
         }
-
-
     }
 
 
@@ -110,11 +114,16 @@ class Search extends React.Component {
 
 const mapStateToProps = (state) => ({
     nominations: state.nominations,
-    search: state.search
 });
 
 const mapDispatchToProps = {
     add_nomination_action,
+}
+
+Search.propsTypes = {
+    nominations: propTypes.array.isRequired,
+    add_nomination_action: propTypes.func.isRequired
+
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);

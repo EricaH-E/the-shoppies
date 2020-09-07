@@ -1,6 +1,7 @@
 import React from 'react';
+import propTypes from 'prop-types';
 import Nominee from './nominee';
-import Banner from '../banner';
+import Banner from './banner';
 
 import { connect } from 'react-redux';
 import { delete_nomination_action } from '../../actions/index';
@@ -60,5 +61,11 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = {
     delete_nomination_action
 }
+
+
+Nominations.propTypes = {
+    nominations: propTypes.array.isRequired,
+    delete_nomination_action: propTypes.func.isRequired
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Nominations); 

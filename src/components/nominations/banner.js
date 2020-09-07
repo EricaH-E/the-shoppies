@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import '../styles/banner.css';
+import '../../styles/banner.css';
 
 export const Banner = (props) => {
     return (
