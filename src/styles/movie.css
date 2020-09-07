@@ -1,0 +1,52 @@
+.container{
+    background:linear-gradient(to bottom right, #ffffff -99%, #000000 100%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 10px;
+    margin:  10px 10px;
+    width: 100%;
+    overflow: hidden; 
+
+}
+
+.movie-list{
+    display: flex;
+    justify-content: space-between;
+    overflow: scroll;
+}
+
+.movie{
+  width: 250px;
+}
+
+.movie ul{   
+    margin: 10px;
+}
+
+.movie ul li{
+    margin-right: 30px;
+    padding: 1px;
+    
+}
+
+
+.movie-img{
+    width: 91%;
+    height: 100%;
+    
+}
+
+li > img{
+    height: 173px; 
+}
+
+.movie-img:hover{
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 6px 10px 0 rgba(238, 234, 234, 0.2), 0 6px 8px 0 rgba(0, 0, 0, 0.19);
+}
+
+li button:hover{
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.19);
+    background-color: #f2f2f2;
+    color: #fa7272;
+}

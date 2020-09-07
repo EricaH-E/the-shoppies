@@ -1,0 +1,59 @@
+
+.main{
+    /* display: flex; */
+    display: grid; 
+    color: #ffffff;
+
+    grid-template-areas: 
+    "search  search search  search"
+    "results results results results"
+    "nominations nominations nominations nominations";
+
+    margin: 5px;
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+}
+
+
+
+
+.search{
+    grid-area: results;  
+    margin-right: 5px;;
+    overflow: hidden;
+
+}
+
+.nominations{
+    grid-area: nominations; 
+    overflow: hidden;
+ } 
+
+.search-bar{
+    grid-area: search;
+    margin-bottom: 15px; 
+ }
+
+#search-bar{
+    grid-area: search; 
+    display: flex;
+    background-color: #ffffff;
+}
+
+#search-bar span{
+    float: left;
+    position: relative;
+    color: #000000;
+    background-color: #ffffff;
+    padding: 10px;
+    
+}
+#search-bar input{
+   width: 95%;
+   padding: 10px;
+   outline: none;
+}
+
+
+

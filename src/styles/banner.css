@@ -1,0 +1,21 @@
+.banner{
+    margin: 10px 0px;
+}
+
+.banner{
+    position: sticky;
+    top: 0; 
+}
+
+.banner-s{
+    background-color: #2f815b;
+    padding: 10px;
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.6s ease;
+}
+
+.banner-h{
+    visibility: hidden;
+    opacity: 0;  
+}
