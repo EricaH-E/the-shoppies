@@ -30,7 +30,7 @@ class Search extends React.Component {
         e.preventDefault();
         this.setState({ query: e.target.value });
 
-        const url = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${this.state.query}&type=movie`
+        const url = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${this.state.query}&type=movie`
         try {
             const data = await axios.get(url);
             const results = filterSearchResults(data.data.Search, this.props.nominations);
