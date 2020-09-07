@@ -31,7 +31,7 @@ class Search extends React.Component {
     handleQueryChange = async (e) => {
         e.preventDefault();
         this.setState({ query: e.target.value });
-        this.SearchMovies = debounce(this.SearchMovies, 300);
+        this.SearchMovies = debounce(this.SearchMovies, 100);
         this.SearchMovies();
     }
 
