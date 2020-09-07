@@ -1,1 +1,1 @@
-Shoppies- Movie Search & Nominate
+Shoppies: Movie Search & Nominate.
